@@ -1,12 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+*{
+  font-family: 'Hanken Grotesk';
+  font-size: 18px;
+}
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   box-sizing: border-box;
+  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,11 +30,12 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+    
 }
 
 .mainBox{
-  height: 200px;
-  min-width: 400px;
+
+  width: 550px;
   border-radius: 20px;
   
 }
@@ -43,15 +49,49 @@ align-content: center;
 
 .mainBox p{
   text-align: center;
+  margin: 15px;
 }
 
 .mainBox .results{
   background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
-  
+  padding: 15px 20px ;
 }
+
 .mainBox .results .grade{
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
   background: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
   text-align: center;
-  height: 100px;
-  width: 100px;
+  height: 130px;
+  width: 130px;
+  border-radius: 65px;
+  align-content: center;
+  flex-wrap: wrap;
+  padding: 15px;
+  
+  
+}
+
+.mainBox .results .grade{
+  align-content: center;
+  flex-shrink: 1;
+}
+.mainBox .results .grade .value1{
+  font-size: 50px;
+  font-weight: 800;
+  color: hsl(0, 0%, 100%);
+}
+
+.mainBox .gradeDes{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.mainBox .gradeDes p {
+  text-align: center;
+  margin: 0;
+  padding: 5px 20px;
+  color: hsl(0, 0%, 100%);
+  font-weight: 500;
 }
