@@ -4,7 +4,7 @@
 @tailwind utilities;
 *{
   font-family: 'Hanken Grotesk';
-  font-size: 18px;
+  
 }
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -24,19 +24,17 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: hsl(0, 0%, 100%);
     
 }
+
 
 .mainBox{
 
   width: 550px;
   border-radius: 20px;
+  height: 380px;
+  box-shadow: hsla(252, 100%, 67%, 0.3) 0px 19px 38px, hsla(252, 100%, 67%, 0.3)0px 15px 12px;;
   
 }
 .mainBox .box{
@@ -47,10 +45,10 @@ body {
 align-content: center;
 }
 
-.mainBox p{
+/* .mainBox p{
   text-align: center;
-  margin: 15px;
-}
+  
+} */
 
 .mainBox .results{
   background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
@@ -94,4 +92,61 @@ align-content: center;
   padding: 5px 20px;
   color: hsl(0, 0%, 100%);
   font-weight: 500;
+}
+
+.mainBox .summary{
+  padding: 15px 20px;
+
+}
+.mainBox .summary .resultsSummary {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  flex-wrap: wrap;
+  padding: 5px 10px;
+  height: 40px;
+  font-size: 15px;
+  font-weight: 900;
+  border-radius:5px ;
+  margin-top: 15px;
+}
+.mainBox .summary .resultsSummary img{
+  height: 23px;
+}
+.mainBox .summary .resultsSummary .left{
+  display: flex;
+}
+.mainBox .summary .resultsSummary .left p{
+ font-weight: 800;
+ padding-left: 5px;
+}
+.mainBox .summary button{
+  background:hsl(241, 81%, 54%);
+  width: 100%;
+  margin-top: 25px;
+  height: 50px;
+  color: hsl(0, 0%, 100%);
+  border-radius: 30px;
+}
+@media screen and (max-width: 650px) {
+  .p-24{
+    padding: 0;
+  }
+  .mainBox {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: none;
+  }
+  .mainBox .results{
+    
+    border-radius: 0 0 30px 30px ;
+  }
+  .mainBox .results, .mainBox .summary {
+    width: 100%;
+  }
+  .mainBox .summary{
+    background: hsl(0, 0%, 100%);
+    padding: 20px;
+  }
 }
